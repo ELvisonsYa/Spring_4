@@ -57,7 +57,7 @@ public class FaqQuestions {
 
         MainPage objMainPage = new MainPage(driver);
 
-        driver.findElement(By.className("App_CookieButton__3cvqF")).click();
+        objMainPage.clickCookieButton();
 
         String actualQuestion = objMainPage.getTextFaqItemHeading(number);
 
@@ -65,7 +65,7 @@ public class FaqQuestions {
 
         String actualAnswer = objMainPage.getTextFaqItemPanel(number);
 
-        Assert.assertEquals("Текст ответа не совпадает", actualAnswer, answerExpected);
+        Assert.assertEquals("Текст ответа не совпадает", answerExpected, actualAnswer);
 
         System.out.println(objMainPage.getTextFaqItemPanel(number));
 

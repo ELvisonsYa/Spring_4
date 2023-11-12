@@ -14,6 +14,9 @@ import java.util.List;
 public class MainPage {
     private WebDriver driver;
 
+    // Кнопка куки
+    private By cookieButton = By.className("App_CookieButton__3cvqF");
+
     //Кнопка заказать в шапке страницы
     private By orderButton = By.xpath(".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
 
@@ -52,6 +55,10 @@ public class MainPage {
         WebElement textItem = faqItems.get(number);
         new Actions(driver).scrollToElement(textItem).perform();
         return textItem.getText();
+    }
+
+    public void clickCookieButton() {
+        driver.findElement(cookieButton).click();
     }
 
 }
